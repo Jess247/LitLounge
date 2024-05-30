@@ -3,11 +3,11 @@ import { FaBookOpen } from "react-icons/fa6"
 
 function Navigation() {
     return (
-        <header>
+        <header >
             <div>
                 <FaBookOpen/> Lit<span>Longe</span>
             </div>
-            <ul>
+            <ul className="flex">
             <Link
                 to="/"
                 >
