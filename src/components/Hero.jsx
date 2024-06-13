@@ -3,13 +3,14 @@ import hero from '../assets/hero.jpg'
 function Hero() {
     return (
         <section 
-            className={` h-[60vh] overflow-hidden`}
-            style={{backgroundImage: "url(`${hero}`)"}}>
-            <img src={hero} 
-                 alt="Two open books in front of a blurry bookshelf."
-                 className='relative z-0 object-fit'
-            />
-            <div className='bg-slate-50 h-10 z-10 absolute top-[50vh] left-1/2 -translate-x-1/2 w-2/3 pl-2 rounded-3xl gap-2 flex max-w-4xl'>
+            className={` bg-red-200 h-[40vh] overflow-hidden`}
+            style={{
+                backgroundImage: `url(${hero})`, 
+                backgroundPosition: "center", 
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat"
+            }}>
+            <div className='bg-slate-50 h-10 z-10 absolute top-[35vh] left-1/2 -translate-x-1/2 w-2/3 pl-2 rounded-3xl gap-2 flex max-w-4xl'>
                 <label 
                     htmlFor="search"
                     className='opacity-0 absolute'>

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Home from "./pages/Home"
+import BookDetail from './components/BookDetail'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path:"books",
     element: <h1>Books</h1>
+  },
+  {
+    path:"books/:id",
+    element: <BookDetail/>
   },
   {
     path:"login",
