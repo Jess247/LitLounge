@@ -10,7 +10,7 @@ function Hero() {
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat"
             }}>
-            <div className='bg-slate-50 h-10 z-10 absolute top-[35vh] left-1/2 -translate-x-1/2 w-2/3 pl-2 rounded-3xl gap-2 flex max-w-4xl'>
+            <div className='bg-slate-50 h-10 z-10 relative top-[25vh] left-1/2 -translate-x-1/2 w-2/3 pl-2 rounded-3xl gap-2 flex max-w-4xl'>
                 <label 
                     htmlFor="search"
                     className='opacity-0 absolute'>
