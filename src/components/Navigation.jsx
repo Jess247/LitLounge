@@ -1,37 +1,35 @@
 import {Link} from "react-router-dom"
 import { FaBookOpen } from "react-icons/fa6"
 import { RxHamburgerMenu } from "react-icons/rx"
+import { RxCross2 } from "react-icons/rx"
+import { useState } from "react"
+import NavLinks from "./NavLinks"
 
 function Navigation() {
-    const isHidden = true
-    const isMobile = true
-    const hideNav = "absolute -top-40 -left-60"
+
+    const [isOpen, setIsOpen] =  useState(false)
+
+    function toggle() {
+        setIsOpen(prevOpen => !prevOpen)
+        console.log(isOpen)
+    }
 
     return (
-        <header className={`flex justify-between p-8`} >
-            <div className="flex items-center gap-1">
-                <FaBookOpen/> Lit<span>Longe</span>
-            </div>
-            <div>
-                <button><RxHamburgerMenu size={25}/></button>
-                <ul className={`flex gap-4 ${isHidden ? hideNav : null}  ${isMobile ? "flex-col mt-4  bg-red-50 w-full" : null}`}>
-                    <Link
-                        to="/"
-                        >
-                        <li>Home</li>
-                    </Link>
-                    <Link
-                        to="books"
-                        >
-                        <li>my books</li>
-                    </Link>
-                    <Link
-                        to="login"
-                        >
-                        <li>Login</li>
-                    </Link>
-                </ul>
-            </div>
+        <header className={"flex justify-between items-center w-full p-8 sticky top-0 flex-wrap"} >
+            <p><FaBookOpen/>LitLonge</p>
+            <nav className="w-1/3">
+                <div className="hidden md:flex justify-between">
+                    <NavLinks/>
+                </div>
+                <div className="md:hidden text-right">
+                    <button onClick={toggle}>{isOpen ? <RxCross2 size={20}/> : <RxHamburgerMenu size={20}/>}</button>
+                </div>
+            </nav>
+            {isOpen && (
+                <div className="flex flex-col items-center basis-full">
+                    <NavLinks/>
+                </div>
+            )}
         </header>
     )
 }

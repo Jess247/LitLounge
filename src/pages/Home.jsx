@@ -6,10 +6,8 @@ import DefaultList from "../components/DefaultList"
 export default function Home() {
     return(
         <>
-            <Navigation/>
             <Hero/>
             <DefaultList/>
-            <Footer/>
         </>
     )
 }
