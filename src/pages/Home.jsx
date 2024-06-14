@@ -1,13 +1,19 @@
 import Navigation from "../components/Navigation"
 import Hero from "../components/Hero"
 import Footer from "../components/Footer"
-import DefaultList from "../components/DefaultList"
-
+import BookList from "../components/BookList"
+import BookCard from "../components/BookCard"
 export default function Home() {
     return(
-        <>
+        <main>
             <Hero/>
-            <DefaultList/>
-        </>
+            <BookList>
+                <BookCard/>
+                <BookCard/>
+                <BookCard/>
+                <BookCard/>
+                <BookCard/>
+            </BookList>
+        </main>
     )
 }

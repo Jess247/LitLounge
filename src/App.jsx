@@ -7,6 +7,7 @@ import {
 } from "react-router-dom"
 import ErrorPage from './pages/ErrorPage'
 import Layout from './components/Layout'
+import MyBooks from "./pages/MyBooks";
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
       },
       {
         path:"books",
-        element: <h1>Books</h1>
+        element: <MyBooks/>
       },
       {
         path:"books/:id",
