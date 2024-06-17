@@ -2,14 +2,15 @@ import Ratings from "./Ratings"
 import { Link } from "react-router-dom"
 import { useContext, useState } from "react"
 import {BooksContext} from "../pages/Home"
+import { MyBooksContext } from "./MyBooksProvider"
+import MyBooks from "../pages/MyBooks"
 
 
 export default function BookCard(props) {
 
-    const [myBooks, setMyBooks] = useState([])
-    const {books} = useContext(BooksContext)
+    const {books} = useContext(BooksContext) || []// fix bug
+    const {addBooks} = useContext(MyBooksContext)
 
-    console.log(myBooks)
 
     return(
         <section className=" w-4/5 max-w-3xl shadow-2xl p-6 mx-auto mt-8 rounded-lg" >
@@ -29,9 +30,10 @@ export default function BookCard(props) {
                 <div className="flex flex-col justify-around w-30 ">
                     <Ratings/>
                     <button id={props.id} className="bg-green-400 py-1 px-4 rounded" onClick={(event) => {
-                            event.preventDefault();
-                            console.log(event.target.id)
-                            setMyBooks(prevBooks => [...prevBooks,books.filter(book => book.id === event.target.id)]);
+                            event.preventDefault()
+                            const currentBook = books.filter(book => book.id === event.target.id)
+                            console.log(currentBook)
+                            addBooks(currentBook)
                         }} >Want to read</button>
                 </div>
             </Link>

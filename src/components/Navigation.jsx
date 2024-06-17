@@ -11,18 +11,17 @@ function Navigation() {
 
     function toggle() {
         setIsOpen(prevOpen => !prevOpen)
-        console.log(isOpen)
     }
 
     return (
         <header className={"flex justify-between items-center w-full p-8 sticky top-0 flex-wrap bg-white z-20 shadow"} >
-            <p><FaBookOpen/>LitLonge</p>
+            <p className="flex items-center gap-2"><FaBookOpen/>LitLonge</p>
             <nav className="w-1/3">
                 <div className="hidden md:flex justify-between">
                     <NavLinks/>
                 </div>
                 <div className="md:hidden text-right">
-                    <button onClick={toggle}>{isOpen ? <RxCross2 size={20}/> : <RxHamburgerMenu size={20}/>}</button>
+                    <button onClick={toggle}>{isOpen ? <RxCross2 size={25}/> : <RxHamburgerMenu size={25}/>}</button>
                 </div>
             </nav>
             {isOpen && (

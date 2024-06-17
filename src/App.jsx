@@ -9,6 +9,8 @@ import ErrorPage from './pages/ErrorPage'
 import Layout from './components/Layout'
 import MyBooks from "./pages/MyBooks"
 import Login from "./pages/Login"
+import Registration from './pages/Registration'
+import { MyBooksProvider } from './components/MyBooksProvider'
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,10 @@ const router = createBrowserRouter([
       {
         path:"login",
         element: <Login/>
+      },
+      {
+        path:"registration",
+        element: <Registration/>
       }
     ]
   }
@@ -39,11 +45,12 @@ const router = createBrowserRouter([
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-    <RouterProvider router={router} />
+    <MyBooksProvider>
+      <RouterProvider router={router} />
+    </MyBooksProvider>
     </>
   )
 }
