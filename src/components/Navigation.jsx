@@ -15,7 +15,7 @@ function Navigation() {
     }
 
     return (
-        <header className={"flex justify-between items-center w-full p-8 sticky top-0 flex-wrap bg-white z-20"} >
+        <header className={"flex justify-between items-center w-full p-8 sticky top-0 flex-wrap bg-white z-20 shadow"} >
             <p><FaBookOpen/>LitLonge</p>
             <nav className="w-1/3">
                 <div className="hidden md:flex justify-between">

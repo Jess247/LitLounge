@@ -8,10 +8,7 @@ export default function MyBooks() {
         <section>
             <h1>My books</h1>
             <BookList>
-                <BookCard/>
-                <BookCard/>
-                <BookCard/>
-                <BookCard/>
+                
             </BookList>
         </section>
     </main>)
