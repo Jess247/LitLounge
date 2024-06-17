@@ -1,6 +1,17 @@
 import hero from '../assets/hero.jpg'
+import { useState } from 'react'
 
-function Hero() {
+function Hero({setQuery}) {
+    const [inputValue, setInputValue] = useState("")
+    const [text, setText] = useState("")
+    const inputEl = document.querySelector("input")
+    
+    function handleClick() {
+        setText(inputValue)
+        setQuery(text)
+        inputEl.value = ""
+    }
+
     return (
         <section 
             className={` bg-red-200 h-[40vh] overflow-hidden`}
@@ -19,8 +30,11 @@ function Hero() {
                 <input
                     type="text" 
                     placeholder='Author, Title, Keyword...'
-                    className='font-light text-sm p-1 bg-transparent w-full'/>
-                <button className='bg-slate-200 h-full py-2 px-4 rounded-r-3xl font-bold hover:bg-slate-300'>
+                    className='font-light text-sm p-1 bg-transparent w-full'
+                    onChange={() => setInputValue(inputEl.value.toLocaleLowerCase().split(" ").join("+"))}/>
+                <button 
+                    className='bg-slate-200 h-full py-2 px-4 rounded-r-3xl font-bold hover:bg-slate-300'
+                    onClick={handleClick}>
                     Search
                 </button>
             </div>
