@@ -17,7 +17,7 @@ export default function BookCard(props) {
             <Link to="books/1"
                 className="flex gap-8">
                 <img src={props.img}
-                    alt="sample"
+                    alt={props.title}
                     className="w-24 h-auto"/>
                 <div className="flex flex-col gap-2">
                     <h2 className="text-lg font-semibold max-w-96">{props.title}</h2>
