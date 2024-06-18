@@ -34,6 +34,7 @@ export default function Home() {
         <main>
             <BooksContext.Provider value={{books}}>
                 <Hero setQuery={setQuery}/>
+                <h1 className="text-2xl text-center font-semibold mt-8 relative after:content-[''] after:block after:w-10 after:h-1 after:bg-fuchsia-600 after:mt-2 after:mx-auto after:rounded-xl uppercase">Books you might like</h1>
                 <BookList>
                     {books?.map(book=> <BookCard title={book.volumeInfo.title} description={book.volumeInfo.description} author={book.volumeInfo.authors} genres={book.volumeInfo.categories} img={book.volumeInfo.imageLinks?.thumbnail} id={book.id}  addBooks={addBooks}/>)}
                 </BookList>
