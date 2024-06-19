@@ -30,7 +30,7 @@ function Hero({setQuery}) {
                 <input
                     type="text" 
                     placeholder='Author, Title, Keyword...'
-                    className='font-light text-sm p-1 bg-transparent w-full'
+                    className='font-light text-sm p-1 bg-transparent w-full border-none'
                     onChange={() => setInputValue(inputEl.value.toLocaleLowerCase().split(" ").join("+"))}/>
                 <button 
                     className='bg-slate-200 h-full py-2 px-4 rounded-r-3xl font-bold hover:bg-slate-300'

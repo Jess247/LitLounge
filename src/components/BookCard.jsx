@@ -13,7 +13,7 @@ export default function BookCard(props) {
 
 
     return(
-        <section className=" w-4/5 h-full max-w-3xl shadow-2xl p-6 mx-auto mb-24 mt-12 rounded-lg" >
+        <section className=" w-4/5 h-full max-w-3xl shadow-2xl p-6 mx-auto my-8 rounded-lg" >
             <Link to="books/1"
                 className="flex flex-wrap gap-8 lg:justify-between">
                 <img src={props.img}
