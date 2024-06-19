@@ -11,6 +11,8 @@ import MyBooks from "./pages/MyBooks"
 import Login from "./pages/Login"
 import Registration from './pages/Registration'
 import { MyBooksProvider } from './components/MyBooksProvider'
+import { AuthProvider } from './components/AuthContext'
+import Protected from './components/Protected'
 
 const router = createBrowserRouter([
   {
@@ -24,11 +26,11 @@ const router = createBrowserRouter([
       },
       {
         path:"books",
-        element: <MyBooks/>
+        element: <Protected element={<MyBooks/>}/>
       },
       {
         path:"books/:id",
-        element: <BookDetail/>
+        element: <Protected element={<BookDetail/>}/>
       },
       {
         path:"login",
@@ -48,9 +50,11 @@ function App() {
 
   return (
     <>
-    <MyBooksProvider>
-      <RouterProvider router={router} />
-    </MyBooksProvider>
+    <AuthProvider>
+      <MyBooksProvider>
+        <RouterProvider router={router} />
+      </MyBooksProvider>
+    </AuthProvider>
     </>
   )
 }
