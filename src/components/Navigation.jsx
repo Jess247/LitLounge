@@ -26,7 +26,7 @@ function Navigation() {
             </nav>
             {isOpen && (
                 <div className="flex flex-col items-center basis-full">
-                    <NavLinks/>
+                    <NavLinks toggle={() => toggle()}/>
                 </div>
             )}
         </header>
