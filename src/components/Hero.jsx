@@ -14,7 +14,7 @@ function Hero({setQuery}) {
 
     return (
         <section 
-            className={` bg-red-200 h-[40vh] overflow-hidden`}
+            className={` bg-gray-600 h-[40vh] overflow-hidden filter bg-blend-overlay`}
             style={{
                 backgroundImage: `url(${hero})`, 
                 backgroundPosition: "center", 

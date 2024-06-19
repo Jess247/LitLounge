@@ -11,7 +11,7 @@ export default function MyBooks() {
 
 
     console.log(myBooks)
-    return(<main>
+    return(<main className="mb-24">
         <Hero/>
         <section className="text-center">
             <h1 className="text-2xl font-semibold mt-8 relative after:content-[''] after:block after:w-10 after:h-1 after:bg-fuchsia-600 after:mt-2 after:mx-auto after:rounded-xl uppercase">My books</h1>
