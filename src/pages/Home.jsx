@@ -11,8 +11,9 @@ const BooksContext = createContext()
 export default function Home() {
 
     const [books, setBooks] = useState([])
-    const {addBooks, query, setQuery} = useContext(MyBooksContext)
-
+    const {addBooks, query, setQuery, setIsBarHidden} = useContext(MyBooksContext)
+    
+    setIsBarHidden(false)
     useEffect(() =>{
         const fetchData = async () => {
             try{

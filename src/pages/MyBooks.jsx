@@ -7,10 +7,9 @@ import MyBooksEmpty from "../components/MyBooksEmpty"
 
 export default function MyBooks() {
 
-    const {myBooks} = useContext(MyBooksContext)
+    const {myBooks, setIsBarHidden} = useContext(MyBooksContext)
+    setIsBarHidden(true)
 
-
-    console.log(myBooks)
     return(<main className="mb-24">
         <Hero/>
         <section className="text-center">
