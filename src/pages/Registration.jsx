@@ -1,8 +1,34 @@
-import {Link} from "react-router-dom"
+import { useContext } from "react"
+import { useState } from "react"
+import {Link, Navigate} from "react-router-dom"
+import { doCreateUserWithEmailAndPassword } from "../firebase/auth"
+import { AuthContext } from "../components/AuthContext"
 
 export default function Registration() {
+    const {isAuthenticated} = useContext(AuthContext)
+
+    const [firstName, setFirstName] = useState("")
+    const [lastName, setLastName] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [confirmPassword, setConfirmPassword] = useState("")
+    const [isRegistering, setIsRegistering] = useState(false)
+    const [errorMsg, setErrorMsg] = useState(2)
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        if(!isRegistering) {
+            setIsRegistering(true)
+            await doCreateUserWithEmailAndPassword(email, password)
+            .catch(err => console.log(err))
+        }
+    }
+
+
     return (
         <main className="flex justify-center my-[15%]">
+            {isAuthenticated && <Navigate to="/books"/>}
             <div className="flex shadow w-3/4 flex-col justify-center px-12 py-12 lg:px-8 rounded-xl">
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                 <img
@@ -16,7 +42,7 @@ export default function Registration() {
                 </div>
 
                 <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                <form className="space-y-6" action="#" method="POST" >
+                <form className="space-y-6" onSubmit={handleSubmit} >
                 <div>
                     <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                         First Name
@@ -27,6 +53,7 @@ export default function Registration() {
                         name="first-name"
                         type="text"
                         autoComplete="first-name"
+                        onChange={(e) => setFirstName(e.target.value)}
                         required
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         />
@@ -42,6 +69,7 @@ export default function Registration() {
                         name="name"
                         type="text"
                         autoComplete="name"
+                        onChange={(e) => setLastName(e.target.value)}
                         required
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         />
@@ -57,6 +85,7 @@ export default function Registration() {
                         name="email"
                         type="email"
                         autoComplete="email"
+                        onChange={(e) => setEmail(e.target.value)}
                         required
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         />
@@ -76,6 +105,7 @@ export default function Registration() {
                         name="password"
                         type="password"
                         autoComplete="current-password"
+                        onChange={(e) => setPassword(e.target.value)}
                         required
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         />
@@ -92,6 +122,7 @@ export default function Registration() {
                         name="password"
                         type="password"
                         autoComplete="current-password"
+                        onChange={(e) => setConfirmPassword(e.target.value)}
                         required
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         />

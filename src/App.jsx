@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path:"books/:id",
-        element: <Protected element={<BookDetail/>}/>
+        element: <BookDetail/>
       },
       {
         path:"login",
