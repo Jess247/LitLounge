@@ -9,7 +9,6 @@ export const MyBooksProvider = ({children}) => {
 
     function addBooks(book){
         setMyBooks(prevBooks => [...prevBooks, ...book])
-        console.log(myBooks)
     }
 
     return (

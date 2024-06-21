@@ -27,7 +27,7 @@ export default function Registration() {
 
 
     return (
-        <main className="flex justify-center my-[15%]">
+        <main className="flex justify-center my-[5%]">
             {isAuthenticated && <Navigate to="/books"/>}
             <div className="flex shadow w-3/4 flex-col justify-center px-12 py-12 lg:px-8 rounded-xl">
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -142,7 +142,7 @@ export default function Registration() {
                 <p className="mt-10 text-center text-sm text-gray-500">
                     Already a member?{' '}
                     <Link to="../login" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
-                    Sign ip here.
+                    Sign in here.
                     </Link>
                 </p>
                 </div>
