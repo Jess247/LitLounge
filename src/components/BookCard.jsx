@@ -8,13 +8,13 @@ import MyBooks from "../pages/MyBooks"
 
 export default function BookCard(props) {
 
-    const {books} = useContext(BooksContext) || []// fix bug
+    const {books} = useContext(BooksContext) || []
     const {addBooks} = useContext(MyBooksContext)
 
 
     return(
         <section className=" w-4/5 h-full md:h-[215px]  max-w-3xl shadow-2xl p-6 mx-auto mt-8 rounded-lg" >
-            <Link to="books/1"
+            <Link to={`books/${props.id}`}
                 className="flex flex-wrap md:flex-nowrap gap-5 md:gap-8 lg:justify-between">
                 <img src={props.img}
                     alt={props.title}

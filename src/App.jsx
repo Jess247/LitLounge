@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Home from "./pages/Home"
-import BookDetail from './components/BookDetail'
+import BookDetail from './pages/BookDetail'
 import {
   createBrowserRouter,
   RouterProvider,
