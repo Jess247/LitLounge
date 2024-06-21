@@ -25,7 +25,7 @@ export default function NavLinks({toggle}) {
         <button 
             type="button"
             className="mt-3 vertical bg-slate-600 text-white px-3 py-1 rounded hover:bg-slate-500 hover:scale-x-105 duration-300"
-            onClick={() => doSignOut().then(() => navigate("/login"))}>
+            onClick={() => doSignOut().then(() => navigate("/"))}>
                 Logout
         </button>: 
         <NavLink 
