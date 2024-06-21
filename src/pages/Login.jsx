@@ -17,6 +17,7 @@ export default function Login() {
             setIsSignedIn(true)
             await doSignInWithEmailAndPassword(email, password)
             .catch(err => setErrorMsg(err.message))
+            console.log(isAuthenticated ? "You are logged in" : "you are logged out") 
         }
     }
 
