@@ -24,7 +24,7 @@ export default function BookCard(props) {
                     <h3 className="ml-4 italic">by {props.author}</h3>
                     <ul className="flex gap-2 text-sm ">
                         <h4>Genre:</h4>
-                        {props.genres?.map(genre => <li className="">{genre}</li>)}
+                        {props.genres?.map((genre, index) => <li className="" key={index}>{genre}</li>)}
                     </ul>
                 </div>
                 <div className="flex gap-4 md:flex-col w-30 items-center">
