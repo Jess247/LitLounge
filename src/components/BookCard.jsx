@@ -13,13 +13,13 @@ export default function BookCard(props) {
 
 
     return(
-        <section className=" w-4/5 h-full max-w-3xl shadow-2xl p-6 mx-auto mt-8 rounded-lg" >
+        <section className=" w-4/5 h-full md:h-[215px]  max-w-3xl shadow-2xl p-6 mx-auto mt-8 rounded-lg" >
             <Link to="books/1"
                 className="flex flex-wrap md:flex-nowrap gap-5 md:gap-8 lg:justify-between">
                 <img src={props.img}
                     alt={props.title}
                     className="w-24 h-32 md:w-auto max-w-24 rounded "/>
-                <h2 className="text-base w-32 md:text-lg font-semibold max-w-60 text-ellipsis">{props.title}</h2>
+                <h2 className="text-base w-32 max-h-[170px] md:text-lg font-semibold max-w-60 overflow-hidden text-ellipsis">{props.title}</h2>
                 <div className="flex flex-col gap-2 basis-60">
                     <h3 className="ml-4 italic">by {props.author}</h3>
                     <ul className="flex gap-2 text-sm ">
